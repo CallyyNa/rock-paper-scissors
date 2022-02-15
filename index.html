@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./index.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Rock Paper Scissors</title>
+</head>
+
+<body>
+    <h1 class="header">Rock Paper Scissors</h1>
+    <div id="game-wrapper">
+        <div>
+            <div id="played-option-wrapper">
+                <span id="computer-option"></span>
+                <span id="player-option"></span>
+            </div>
+            <div id="option-wrapper">
+                <button onclick="playRound('rock')">Rock</button>
+                <button onclick="playRound('paper')">Paper</button>
+                <button onclick="playRound('scissors')">Scissors</button>
+            </div>
+
+        </div>
+        <div>
+            <p>Das Spiel geht so lange bis einer der Spieler 5 Punkte erreicht hat.</p>
+            <p>Stein schlägt Schere</p>
+            <p>Schere schlägt Papier</p>
+            <p>Papier schlägt Stein</p>
+            <p>Score Computer:</p>
+            <p id="score-computer">0</p>
+            <p>Score Player:</p>
+            <p id="score-player">0</p>
+            <p>Ergebnis dieses Spiels: </p>
+            <p>Box mit Erklärung</p>
+            <button>Restart</button>
+        </div>
+    </div>
+    <div>
+        <p>Made by me with &#128151;</p>
+    </div>
+
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Some text in the Modal..</p>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
