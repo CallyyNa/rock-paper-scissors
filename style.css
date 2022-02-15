@@ -1,13 +1,38 @@
+html,
+body {
+    height: 100%;
+}
+
+.game-body {
+    display: grid;
+    grid-template-rows: 10% 80% 10%;
+    height: 100%;
+}
 #game-wrapper {
     display: grid;
     grid-template-columns: 70% 30%;
     column-gap: 1em;
 }
 
+.emoticon-wrapper {
+    display: grid;
+    grid-template-rows: 60% 40%;
+}
+
 #option-wrapper {
     display: grid;
     grid-template-columns: 30% 30% 30%;
     column-gap: 1em;
+}
+
+.option-box {
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+}
+
+.option {
+    font-size: 150px;
 }
 
 #played-option-wrapper {

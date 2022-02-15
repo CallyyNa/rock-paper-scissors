@@ -4,15 +4,22 @@ let count = 0;
 let playerCount = 0;
 let computerCount = 0;
 
+const modal = document.getElementById("myModal");
+const modalText = document.getElementById("modal-finish-text");
+const scoreComputer = document.getElementById('score-computer');
+const scorePlayer = document.getElementById('score-player');
+const playerOption = document.getElementById("player-option");
+const computerOption = document.getElementById("computer-option")
+
 const computerPlay = () => {
     return options[Math.floor(Math.random() * options.length)].name;
 }
 
-const playRound = (playerOption) => {
+const playRound = (playerOpt) => {
     let computerSelection = computerPlay();
-    let playerSelection = options.find(option => option.name === playerOption);
-    document.getElementById("player-option").innerHTML = playerSelection.icon;
-    document.getElementById("computer-option").innerHTML = options.find(option => option.name === computerSelection).icon;
+    let playerSelection = options.find(option => option.name === playerOpt);
+    playerOption.innerHTML = playerSelection.icon;
+    computerOption.innerHTML = options.find(option => option.name === computerSelection).icon;
     count++
 
     if (playerSelection.name == 'rock' && computerSelection == 'paper') {
@@ -33,19 +40,21 @@ const playRound = (playerOption) => {
     else if (playerSelection.name == 'scissors' && computerSelection == 'rock') {
         computerCount++
     }
-    document.getElementById('score-computer').textContent = computerCount;
-    document.getElementById('score-player').textContent = playerCount;
+    scoreComputer.textContent = computerCount;
+    scorePlayer.textContent = playerCount;
     game(playerCount, computerCount)
 }
 
 const game = (playerCount, computerCount) => {
     console.log(playerCount, computerCount)
     if (playerCount == 5) {
-        document.getElementById("myModal").style.display = "block";
+        modalText.innerHTML = 'Congratulations!! You have won!'
+        modal.style.display = "block";
         console.log("Player has won game")
     }
     else if (computerCount == 5) {
-        document.getElementById("myModal").style.display = "block";
+        modalText.innerHTML = "Oh no! The computer won."
+        modal.style.display = "block";
         console.log("Computer has won game")
     }
     else if (playerCount > computerCount) {
@@ -58,4 +67,17 @@ const game = (playerCount, computerCount) => {
         console.log('Draw. Better luck next time.')
     }
 }
+const closeModal = () => {
+    modal.style.display = "none";
+}
 
+const newGame = () => {
+    count = 0
+    playerCount = 0
+    computerCount = 0
+    scoreComputer.innerHTML = computerCount
+    scorePlayer.innerHTML = playerCount
+    playerOption.innerHTML = ""
+    computerOption.innerHTML = ""
+    modal.style.display = "none";
+}
