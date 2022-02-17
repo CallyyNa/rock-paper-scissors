@@ -5,20 +5,29 @@
 html,
 body {
     height: 100%;
-    font-family: 'Fira Sans';
+    font-family: 'Bebas Neue';
     margin: 0;
 }
 
 button {
-    font-family: 'Fira Sans'; 
+    font-family: 'Bebas Neue' !important;
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+    text-shadow: 2px 2px #fcbf49;
+    font-size: 25px;
 }
 
 header {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
-    font-family: 'Bebas Neue';
     background-color: #fcbf49;
+    padding-left: 5%;
 }
 
 h1 {
@@ -28,7 +37,7 @@ h1 {
 
 .game-body {
     display: grid;
-    grid-template-rows: 10% 80% 10%;
+    grid-template-rows: 10% 85% 5%;
     height: 100%;
 }
 #game-wrapper {
@@ -39,7 +48,7 @@ h1 {
 
 .emoticon-wrapper {
     display: grid;
-    grid-template-rows: 60% 40%;
+    grid-template-rows: 70% 30%;
 }
 
 #option-wrapper {
@@ -52,6 +61,9 @@ h1 {
     margin: auto;
     width: 60%;
     padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 
 .option {
@@ -61,40 +73,54 @@ h1 {
 .option-button {
     width: 25%;
     height: 40%;
-    font-family: 'Bebas Neue';
+    font-size: 35px;
 }
 
 #played-option-wrapper {
     display: grid;
     grid-template-columns: 50% 50%;
-    column-gap: 1em;
+}
+
+.explanation-wrapper {
+    display: grid;
+    grid-template-rows: 60% 30% 10%;
+}
+
+.result-box {
+    border: solid 2px #fcbf49;
+    height: 60%;
+    padding: 10px;
 }
 
 footer {
-    border-top-color: #fcbf49;
-    border-top-style: solid;
-    border-top-width: 10px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-left: 5%;
+    border-top: 2px black solid;
+    box-shadow: 2px -2px #fcbf49;
+    background-color: transparent;
 }
 
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none; 
+    position: fixed;
+    z-index: 1; 
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%; 
+    height: 100%; 
+    overflow: auto;
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
   }
   
   .modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 15% auto; 
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 80%; 
   }
   
   .close {
