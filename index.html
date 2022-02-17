@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Rock Paper Scissors</title>
+    <title>Schere Stein Papier</title>
 </head>
 
 <body>
     <div class="game-body">
         <header>
-            <h1 class="header">Rock Paper Scissors</h1>
+            <h1 class="header">Schere Stein Papier</h1>
         </header>
         <div id="game-wrapper">
             <div class="emoticon-wrapper">
@@ -25,31 +25,36 @@
                     </div>
                 </div>
                 <div id="option-wrapper">
-                    <button class="option-button" onclick="playRound('rock')">Rock</button>
-                    <button class="option-button" onclick="playRound('paper')">Paper</button>
-                    <button class="option-button" onclick="playRound('scissors')">Scissors</button>
+                    <button class="option-button" onclick="playRound('rock')">Stein</button>
+                    <button class="option-button" onclick="playRound('paper')">Papier</button>
+                    <button class="option-button" onclick="playRound('scissors')">Schere</button>
                 </div>
             </div>
             <div class="explanation-wrapper">
                 <div>
+                    <h2>ANLEITUNG</h2>
                     <p>Das Spiel geht so lange bis einer der Spieler 5 Punkte erreicht hat.</p>
-                    <p>Stein schlägt Schere</p>
-                    <p>Schere schlägt Papier</p>
-                    <p>Papier schlägt Stein</p>
-                    <div>
+                    <p>> Stein schlägt Schere</p>
+                    <p>> Schere schlägt Papier</p>
+                    <p>> Papier schlägt Stein</p>
+                    <div class="score-wrapper">
+                        <div class="score-box">
+                            <p id="score-computer" class="score">0</p>
+                            <p class="score-text">Computer</p>
+                        </div>
+                        <div class="score-box">
+                            <p id="score-player" class="score">0</p>
+                            <p class="score-text">Spieler</p>
+                        </div>
                     </div>
-                    <p>Score Computer:</p>
-                    <p id="score-computer">0</p>
-                    <p>Score Player:</p>
-                    <p id="score-player">0</p>
                 </div>
                 <div>
                     <p>Ergebnis dieses Spiels: </p>
                     <div class="result-box">
-                        <p>Box mit Erklärung</p>
+                        <p id="explanation-result"></p>
                     </div>
                 </div>
-                <button onclick="newGame()">Restart</button>
+                <button onclick="newGame()">Neu starten</button>
             </div>
         </div>
         <footer>
@@ -58,9 +63,9 @@
     </div>
     <div id="myModal" class="modal">
         <div class="modal-content">
-            <span onclick="closeModal()">&times;</span>
+            <span id="modal-emoticon"></span>
             <p id="modal-finish-text"></p>
-            <button onclick="newGame()">New game</button>
+            <button onclick="newGame()">Nochmal</button>
         </div>
     </div>
 </body>

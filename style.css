@@ -8,6 +8,10 @@ body {
     font-family: 'Bebas Neue';
     margin: 0;
 }
+h2, 
+p {
+    margin: 5px 0 5px 0;
+}
 
 button {
     font-family: 'Bebas Neue' !important;
@@ -43,7 +47,6 @@ h1 {
 #game-wrapper {
     display: grid;
     grid-template-columns: 70% 27%;
-    justify-content: space-between;
 }
 
 .emoticon-wrapper {
@@ -81,15 +84,39 @@ h1 {
     grid-template-columns: 50% 50%;
 }
 
+.score-wrapper {
+    display: flex;
+    justify-content: space-around;
+}
+
+.score-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.score {
+    font-size: 80px;
+    margin: 0;
+    text-shadow: 2px 2px #fcbf49;
+}
+
+.score-text{
+    font-size: 25px;
+} 
+
 .explanation-wrapper {
     display: grid;
     grid-template-rows: 60% 30% 10%;
 }
 
 .result-box {
-    border: solid 2px #fcbf49;
+    border: solid 2px black;
     height: 60%;
     padding: 10px;
+    box-shadow: 2px 2px #fcbf49;
+    background-color: transparent;
 }
 
 footer {
@@ -120,9 +147,17 @@ footer {
     margin: 15% auto; 
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; 
+    width: 50%; 
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
   
+
+#modal-emoticon {
+    font-size: 100px;
+}
   .close {
     color: #aaa;
     float: right;

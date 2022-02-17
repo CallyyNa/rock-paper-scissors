@@ -6,10 +6,13 @@ let computerCount = 0;
 
 const modal = document.getElementById("myModal");
 const modalText = document.getElementById("modal-finish-text");
+const modalEmoticon = document.getElementById("modal-emoticon");
 const scoreComputer = document.getElementById('score-computer');
 const scorePlayer = document.getElementById('score-player');
 const playerOption = document.getElementById("player-option");
-const computerOption = document.getElementById("computer-option")
+const computerOption = document.getElementById("computer-option");
+const roundExplanation = document.getElementById("explanation-result");
+
 
 const computerPlay = () => {
     return options[Math.floor(Math.random() * options.length)].name;
@@ -46,29 +49,25 @@ const playRound = (playerOpt) => {
 }
 
 const game = (playerCount, computerCount) => {
-    console.log(playerCount, computerCount)
     if (playerCount == 5) {
-        modalText.innerHTML = 'Congratulations!! You have won!'
+        modalText.innerHTML = 'Glückwunsch! Du hast den Computer besiegt!'
         modal.style.display = "block";
-        console.log("Player has won game")
+        modalEmoticon.innerHTML = "&#127942;"
     }
     else if (computerCount == 5) {
-        modalText.innerHTML = "Oh no! The computer won."
+        modalText.innerHTML = "Oh nein! Der Computer hat gewonnen."
         modal.style.display = "block";
-        console.log("Computer has won game")
+        modalEmoticon.innerHTML = "&#128128;"
     }
     else if (playerCount > computerCount) {
-        console.log('Congrats Player. You have won the round.')
+        roundExplanation.innerHTML = "Herzlichen Glückwunsch! Du hast das gesamte Spiel gewonnen."
     }
     else if (computerCount > playerCount) {
-        console.log('Sorry. The computer has won this round.')
+        roundExplanation.innerHTML = "Schade. Der Computer hat das ganze Spiel gewonnen."
     }
     else {
-        console.log('Draw. Better luck next time.')
+        roundExplanation.innerHTML = "Unentschieden. Mehr Glück beim nächsten Mal."
     }
-}
-const closeModal = () => {
-    modal.style.display = "none";
 }
 
 const newGame = () => {
